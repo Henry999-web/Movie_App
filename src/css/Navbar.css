@@ -1,0 +1,103 @@
+.navbar {
+  position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding: 8px 6%; /* reduced vertical padding to shrink navbar height */
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: transparent;
+   backdrop-filter: blur(10px);
+   z-index: 1000;
+   transition: 0.3s ease;
+   min-height: 48px; /* ensures consistent minimum height */
+   box-sizing: border-box;
+}
+
+.navbar-brand img {
+  display: block;
+  width: auto;
+  max-height: 48px; /* limits image height to fit the navbar */
+  object-fit: contain;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Starts with no width */
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease-in-out; /* Animates the width */
+}
+
+.nav-link:hover {
+    color: #f0f0f0; /* Slightly lighten color on hover */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expands to full width on hover */
+}
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+        display: block;
+    }
+    #menu-toggle:checked ~ .navbar-links {
+        height: 180px;
+        padding: 20px;
+    }
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar-brand img{
+    font-size: 1.2rem;
+    max-height: 36px;
+  }
+
+  .navbar-links {
+    position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.85);
+        width: 200px;
+        height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+        transition: 0.3s ease;
+  }
+
+  .nav-link {
+    padding: 0.5rem;
+  }
+}
+header.scrolled {
+    background: rgba(0, 0, 0, 0.6);
+}
