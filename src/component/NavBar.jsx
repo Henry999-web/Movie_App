@@ -9,7 +9,7 @@ function NavBar() {
                 <Link to="/"><img src={clapperboard} alt={clapperboard} /></Link>
             </div>
             <input type="checkbox" id="menu-toggle" />
-           <label htmlFor="menu-toggle" className="hamburger">&#9776;</label>
+           <label htmlFor="menu-toggle" className="hamburger"><p>Navigation</p>&#9776;</label>
                <div className="navbar-links">
                 <Link to="/" className="nav-link">Home</Link>
                 <Link to="/favorites" className="nav-link">Favorites</Link>

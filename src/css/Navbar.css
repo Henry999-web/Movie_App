@@ -62,6 +62,13 @@
     color: white;
     cursor: pointer;
 }
+.hamburger p {
+    margin: 0;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
 
 @media (max-width: 768px) {
   .hamburger {
@@ -97,6 +104,9 @@
   .nav-link {
     padding: 0.5rem;
   }
+  .nav-link:hover::after {
+    width: 50%; /* Expands to full width on hover */
+}
 }
 header.scrolled {
     background: rgba(0, 0, 0, 0.6);
